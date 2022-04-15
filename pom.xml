@@ -68,11 +68,13 @@
 			<groupId>io.kotest.extensions</groupId>
 			<artifactId>kotest-extensions-spring</artifactId>
 			<version>1.1.0</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlinx</groupId>
 			<artifactId>kotlinx-coroutines-core-jvm</artifactId>
 			<version>1.6.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

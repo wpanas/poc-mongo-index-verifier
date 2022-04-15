@@ -11,7 +11,7 @@ import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 
 @SpringBootTest(classes = [MongoIndexVerifierApplication::class])
-class TaskRepositorySpec(taskRepository: TaskRepository) : StringSpec({
+class TaskRepositoryTest(taskRepository: TaskRepository) : StringSpec({
     "should find tasks by status without indexing issues" {
         // given 2 new tasks & one started task
         val newTasks = setOf(Task(), Task())
