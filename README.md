@@ -6,10 +6,8 @@ uses Spring Data MongoDB.
 # What is already done?
 
 1. I've managed to plug in a place where I can obtain a `Query` object that is later used by MongoDB's driver.
-
 2. I map a `Query` to an [explain](https://www.mongodb.com/docs/manual/reference/command/explain/)
    command and run the command.
-
 3. After that, I check if a `winninPlan` is
    not [COLLSCAN](https://www.mongodb.com/docs/manual/reference/explain-results/#collection-scan-vs.-index-use)
    nor [SORT](https://www.mongodb.com/docs/manual/reference/explain-results/#sort-stage).
@@ -27,5 +25,3 @@ To make it production-ready there a few things that should be done.
 7. Make this feature available as
    an [auto-configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.developing-auto-configuration)
 8. Publish it :)
-
-
