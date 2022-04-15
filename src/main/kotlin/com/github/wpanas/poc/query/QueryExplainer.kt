@@ -2,14 +2,15 @@ package com.github.wpanas.poc.query
 
 import com.github.wpanas.poc.interceptors.FindWithQueryMethodInterceptor
 import com.mongodb.client.MongoDatabase
+import org.bson.Document
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 class QueryExplainer(
     private val mongoDatabase: MongoDatabase
 ) {
-    fun explain(queryDocument: org.bson.Document) {
-        val command = org.bson.Document()
+    fun explain(queryDocument: Document) {
+        val command = Document()
         command["explain"] = queryDocument
 
         logger.info(command.toJson())
@@ -25,7 +26,7 @@ class QueryExplainer(
 
     private fun assertIndexIsUsed(
         explain: ExplainedPlan,
-        queryDocument: org.bson.Document
+        queryDocument: Document
     ) {
         if (explain.isNotUsingIndex()) {
             throw NoIndexException(queryDocument)
